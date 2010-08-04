@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<repositories xmlns="" version="1.0">
+    <repo quality="experimental" status="official">
+        <name>cloudkick</name>
+        <description>Cloudkick ebuilds</description>
+        <homepage>http://github.com/cloudkick/cloudkick-overlay/</homepage>
+        <owner type="company">
+            <email>support@cloudkick.com</email>
+            <name>Cloudkick, Inc.</name>
+        </owner>
+        <source type="git">http://github.com/cloudkick/cloudkick-overlay.git</source>
+        <feed>http://github.com/cloudkick/cloudkick-overlay/commits/master.atom</feed>
+    </repo>
+</repositories>
