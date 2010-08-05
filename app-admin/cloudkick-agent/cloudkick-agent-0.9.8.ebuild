@@ -27,6 +27,9 @@ src_install() {
 
     newinitd "${FILESDIR}/cloudkick-agent.initd" "cloudkick-agent"
     newconfd "${FILESDIR}/cloudkick-agent.confd" "cloudkick-agent"
+
+    insinto /etc/logrotate.d
+    newins "${FILESDIR}/cloudkick-agent.logrotate" "cloudkick-agent"
 }
 
 pkg_postinst() {
