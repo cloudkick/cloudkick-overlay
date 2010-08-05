@@ -19,9 +19,9 @@ it looks something like this:
 overlays  : http://www.gentoo.org/proj/en/overlays/repositories.xml
             http://github.com/cloudkick/cloudkick-overlay/raw/master/overlay.xml
 
-
 You you can add the Cloudkick Overlay by running
 
+    layman -L
     layman -a cloudkick-overlay
 
 At this point you will need to edit your /etc/make.conf by adding
@@ -50,7 +50,7 @@ You probably also want to add the agent to the default runlevel:
 
 Now start the agent
 
-    /etc/init.d/cloudkick-agent
+    /etc/init.d/cloudkick-agent start
 
 And log into Cloudkick and make sure the agent is shown as connected in the
 Dashboard. If not, check /var/log/cloudkick-agent.log for troubleshooting
