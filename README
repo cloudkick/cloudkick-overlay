@@ -1,0 +1,57 @@
+1. Preparing Layman
+
+The easiest way to install this overlay is to use layman. To use this overlay
+with layman you will need to install layman with the "git" USE flag:
+
+    echo "app-portage/layman git" >> /etc/portage/package.use
+    emerge -a layman
+
+You will also need to modify /etc/make.conf to use layman, but you should hold
+off until you've added an overlay, otherwise emerge gets unhappy.
+
+
+2. Adding the Cloudkick Overlay
+
+Open up /etc/layman/layman.cfg and look for a line that says 'overlays  :'. Add
+'http://github.com/cloudkick/cloudkick-overlay/raw/master/overlay.xml' so that
+it looks something like this:
+
+overlays  : http://www.gentoo.org/proj/en/overlays/repositories.xml
+            http://github.com/cloudkick/cloudkick-overlay/raw/master/overlay.xml
+
+
+You you can add the Cloudkick Overlay by running
+
+    layman -a cloudkick-overlay
+
+At this point you will need to edit your /etc/make.conf by adding
+'source /var/lib/layman/make.conf' at the end.
+
+3. Installing the Cloudkick Agent
+
+You should now be able to install the Cloudkick Agent by running
+
+    emerge -a cloudkick-agent
+
+This will also pull in the cloudkick-config tool which helsp you configure the
+agent. When they are done installing run.
+
+    cloudkick-config
+
+And provide your Cloudkick username and password when prompted. This will
+generate a basic /etc/cloudkick.conf. If this node already appears on your
+Cloudkick dashboard then this is all the configuration needed. Otherwise you
+will need to specify a node name in /etc/cloudkick.conf as described at
+https://support.cloudkick.com/Agent/Cloudkick.conf.
+
+You probably also want to add the agent to the default runlevel:
+
+    rc-update add cloudkick-agent default
+
+Now start the agent
+
+    /etc/init.d/cloudkick-agent
+
+And log into Cloudkick and make sure the agent is shown as connected in the
+Dashboard. If not, check /var/log/cloudkick-agent.log for troubleshooting
+information.
