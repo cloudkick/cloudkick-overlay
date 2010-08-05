@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <repositories xmlns="" version="1.0">
     <repo quality="experimental" status="official">
-        <name>cloudkick</name>
+        <name>cloudkick-overlay</name>
         <description>Cloudkick ebuilds</description>
         <homepage>http://github.com/cloudkick/cloudkick-overlay/</homepage>
         <owner type="company">
