@@ -7,8 +7,8 @@ EAPI="2"
 DESCRIPTION="The Cloudkick monitoring agent"
 HOMEPAGE="http://cloudkick.com/"
 SRC_URI="
-    x86?    ( http://packages.cloudkick.com/releases/${PN}/binaries/${P}_i386.tar.gz )
-    amd64?  ( http://packages.cloudkick.com/releases/${PN}/binaries/${P}_amd64.tar.gz )"
+    x86?    ( http://packages.cloudkick.com/releases/${PN}/binaries/old/${P}_i386.tar.gz )
+    amd64?  ( http://packages.cloudkick.com/releases/${PN}/binaries/old/${P}_amd64.tar.gz )"
 
 LICENSE="Proprietary"
 SLOT="0"
