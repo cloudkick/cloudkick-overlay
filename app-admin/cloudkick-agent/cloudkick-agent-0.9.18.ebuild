@@ -12,7 +12,7 @@ SRC_URI="
 
 LICENSE="Proprietary"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="
