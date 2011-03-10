@@ -1,9 +1,13 @@
+Installation
+============
+
 1. Preparing Layman
 
 The easiest way to install this overlay is to use layman. To use this overlay
 with layman you will need to install layman with the "git" USE flag:
 
     echo "app-portage/layman git" >> /etc/portage/package.use
+    emerge --sync
     emerge -a layman
 
 You will also need to modify /etc/make.conf to use layman, but you should hold
@@ -31,7 +35,6 @@ At this point you will need to edit your /etc/make.conf by adding
 
 You should now be able to install the Cloudkick Agent by running
 
-    emerge --sync
     emerge -a cloudkick-agent
 
 This will also pull in the cloudkick-config tool which helsp you configure the
@@ -56,3 +59,19 @@ Now start the agent
 And log into Cloudkick and make sure the agent is shown as connected in the
 Dashboard. If not, check /var/log/cloudkick-agent.log for troubleshooting
 information.
+
+Updating the Agent
+==================
+
+1. Syncing Layman
+
+First you'll need to update your local copy of the cloudkick overlay:
+
+    layman -s cloudkick-overlay
+
+If you want to always keep your agent up to date, the best approach is to do
+this on a cron job - weekly is probably fine.
+
+2. Updating the Agent
+
+    emerge -a cloudkick-agent
